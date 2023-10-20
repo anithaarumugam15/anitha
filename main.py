@@ -1,13 +1,24 @@
-#write a program that determines whether a year entered by the user in a LeapYear or not using if_elief_else statement
-def isLeapYear(Year):
- if (Year % 4 == 0 and Year % 100 !=0)or year % 400 == 0:
-  return True
- else:
-  return False
+"""
+Write a function called linear_search_product that takes the list of products and a target product
+name as input. The function should perform a linear search to find the target product in the list and
+return a list of indices of all occurrences of the product if found, or an empty list if the product is not
+found.
+"""
 
-year = int(input("Enter a year:"))
 
-if isLeapYear(year):
-  print('{}is a Leapyear.'.format(year))
-else:
-  print ('{}is not a leapyear.'. format(year))
+def linearSearchProduct(productList, targetProduct):
+  indices = []
+
+  for index, product in enumerate(productList):
+    if product == targetProduct:
+      indices.append(index)
+
+  return indices
+
+
+# Example usage:
+products = ["shoes", "boot", "loafer", "shoes", "sandal", "shoes"]
+target = "shoes"
+target2 = 'apple'
+result = linearSearchProduct(products, target)
+print(result)
